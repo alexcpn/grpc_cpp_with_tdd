@@ -1,0 +1,14 @@
+// Defenition for Video Detection porototype
+syntax = "proto3";
+
+message Response {
+  // if reponse > 0 suceess else failure- check error_details for failure message
+  int32 response = 1;
+}
+message MatInput{
+    bytes cvmat =1;
+}
+service CvMat {
+   rpc transferMat (MatInput) returns (Response){}
+}
+
